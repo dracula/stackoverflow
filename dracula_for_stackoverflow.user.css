@@ -289,7 +289,7 @@
         border: 5px double var(--black-025);
     }
     /**
-     * Fixes string color, by default stackoverflow uses the same color as variabels
+     * Fixes string color, by default stack overflow uses the same color as variables
      */
     code[class*="language-"] .hljs-string, pre.s-code-block>code .hljs-string{
         color: #f1fa8c;
@@ -304,7 +304,7 @@
     }
     /**
      * Fixes text color for elements with black background color
-     * --black means white, this behaviour is same as stackoverflow's dfeault dark mode
+     * --black means white, this behavior is same as stack overflow's default dark mode
      */
     #user-menu .um-header-info .mod-flair, #user-menu .um-header-info .um-user-link,
     #user-menu .um-header-info .um-flair .badgecount, #user-menu .um-header-info .um-flair .reputation-score{
