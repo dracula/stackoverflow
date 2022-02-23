@@ -27,7 +27,7 @@ Available values are:
 
 - <details>
     <summary><img src="https://www.thecolorapi.com/id?format=svg&hex=ffb86c&named=false" width=10> Orange</summary>
-    <img src="./images/accent_color/red.png">
+    <img src="./images/accent_color/orange.png">
   </details>
 
 - <details>
