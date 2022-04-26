@@ -260,6 +260,21 @@
     ========================================================================== */
     
     /**
+     * Footer color fix
+     */
+    body {
+        --theme-footer-background-color: #343746 !important;
+        --theme-footer-title-color: #a1aac8 !important;
+        --theme-footer-text-color: #8c9bca !important;
+        --theme-footer-link-color: #818eb6 !important;
+        --theme-footer-link-color-hover: #a1aac8 !important;
+        --theme-footer-link-color-active: hsl(27,90%,55%) !important;
+        --theme-footer-link-caret-color: var(--theme-footer-background-color) !important;
+        --theme-footer-divider-color: hsl(210,8%,25%) !important;
+    }
+
+
+    /**
      * Logo fix for light mode users
      */
     .s-topbar .s-topbar--logo .-img {
