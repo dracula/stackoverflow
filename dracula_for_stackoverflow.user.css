@@ -260,14 +260,14 @@
     ========================================================================== */
     
     /**
-     * For light mode users
+     * Logo fix for light mode users
      */
     .s-topbar .s-topbar--logo .-img {
-        background-image: url(../../Img/unified/sprites.svg?v=fcc0ea44ba27);
+        filter: invert(.5) brightness(2);
     }
     
     /**
-     * For places that have a backgorund color
+     * For places that have a background color
      */
     .s-post-summary--stats .s-post-summary--stats-item.has-answers.has-accepted-answer,
     .status.answered-accepted, .status.answered-accepted .mini-counts, .status.answered-accepted .minicounts span,
