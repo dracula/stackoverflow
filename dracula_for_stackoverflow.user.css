@@ -5,7 +5,7 @@
 @description    Dark mode for StackOverflow
 @license        MIT License
 @author         Wasi Master
-@updateURL      https://github.com/dracula/github/raw/master/dracula_for_stackoverfow.user.css
+@updateURL      https://github.com/dracula/stackoverflow/raw/master/dracula_for_stackoverflow.user.css
 @preprocessor   stylus
 
 @var select    accent-color       "Accent Color"        ["red:Red", "green:Green", "cyan:Cyan", "orange:Orange", "pink:Pink", "purple:Purple*", "yellow:Yellow", "white:White", "comment:Comment Color"]
