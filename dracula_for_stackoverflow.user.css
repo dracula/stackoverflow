@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Dracula for Stack Overflow
 @namespace      dracula/stackoverflow
-@version        1.1.1
-@description    Dark mode for StackOverflow
+@version        2.0.0
+@description    Dark mode for StackOverflow and StackExchange
 @license        MIT License
 @author         Wasi Master
 @updateURL      https://github.com/dracula/stackoverflow/raw/master/dracula_for_stackoverflow.user.css
@@ -16,7 +16,21 @@
 @var text      sans-font          "Sans Font"           -apple-system,BlinkMacSystemFont,"Segoe UI","Liberation Sans",sans-serif
 @var text      serif-font         "Serif Font"          Georgia,Cambria,"Times New Roman",Times,serif
 ==/UserStyle== */
-@-moz-document domain("stackoverflow.com") {
+@-moz-document domain("stackoverflow.com"),
+domain("askubuntu.com"),
+domain("mathoverflow.net"),
+domain("serverfault.com"),
+domain("stackapps.com"),
+regexp(".*stackexchange.com.*"),
+domain("stackmod.com"),
+domain("stackmod.blog"),
+domain("stackoverflow.blog"),
+domain("stackoverflowbusiness.com"),
+domain("stackoverflowteams.com"),
+domain("superuser.com"),
+domain("tex-talk.net"),
+domain("thesffblog.com")
+{
     /* ==========================================================================
     Base Colors
     ========================================================================== */
@@ -164,6 +178,7 @@
             --blue-900: #ffafdd !important;
         }
         --powder-050: #272e42 !important;
+        --powder-100-transparent: #3b446250;
         --powder-100: #3b4462 !important;
         --powder-200: #6272a4 !important;
         --powder-300: #4e5b83 !important;
@@ -383,3 +398,131 @@
         .hljs{display:block;overflow-x:auto;background:#282a36}.hljs-built_in,.hljs-link,.hljs-section,.hljs-selector-tag{color:#8be9fd}.hljs-keyword{color:#ff79c6}.hljs,.hljs-subst{color:#f8f8f2}.hljs-attr,.hljs-meta-keyword,.hljs-title{font-style:italic;color:#50fa7b}.hljs-addition,.hljs-bullet,.hljs-meta,.hljs-name,.hljs-string,.hljs-symbol,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable{color:#f1fa8c}.hljs-comment,.hljs-deletion,.hljs-quote{color:#6272a4}.hljs-doctag,.hljs-keyword,.hljs-literal,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-strong,.hljs-title,.hljs-type{font-weight:700}.hljs-literal,.hljs-number{color:#bd93f9}.hljs-emphasis{font-style:italic}
     }
 }
+
+@-moz-document domain("askubuntu.com"),
+domain("mathoverflow.net"),
+domain("serverfault.com"),
+domain("stackapps.com"),
+regexp(".*stackexchange.com.*"),
+domain("stackmod.com"),
+domain("stackmod.blog"),
+domain("stackoverflow.blog"),
+domain("stackoverflowbusiness.com"),
+domain("stackoverflowteams.com"),
+domain("superuser.com"),
+domain("tex-talk.net"),
+domain("thesffblog.com") {
+
+    /**
+    * Adaptation for StackExchange sites without a dark theme
+    **/
+    body {
+        background: none !important;
+        --theme-primary-color: var(--blue-400)!important;
+
+        --theme-primary-025: var(--blue-050)!important;
+        --theme-primary-050: var(--blue-050)!important;
+        --theme-primary-075: var(--blue-050)!important;
+        --theme-primary-100: var(--blue-100)!important;
+        --theme-primary-150: var(--blue-200)!important;
+        --theme-primary-200: var(--blue-200)!important;
+        --theme-primary-300: var(--blue-300)!important;
+        --theme-primary-350: var(--blue-300)!important;
+        --theme-primary-400: var(--blue-400)!important;
+        --theme-primary-500: var(--blue-500)!important;
+        --theme-primary-600: var(--blue-600)!important;
+        --theme-primary-700: var(--blue-700)!important;
+        --theme-primary-800: var(--blue-800)!important;
+        --theme-primary-900: var(--blue-900)!important;
+
+        --theme-background-color: var(--white)!important;
+        --theme-content-background-color: var(--white)!important;
+        --theme-content-border-color: var(--white)!important;
+
+        --theme-tag-background-color: var(--powder-400)!important;
+        --theme-tag-color: var(--powder-700)!important;
+        --theme-tag-border-color: var(--powder-100)!important;
+
+        --theme-link-color: var(--blue-400)!important;
+        --theme-post-title-color: var(--blue-400)!important;
+    }
+
+    /**
+    * Additional improvements of the SE theme
+    **/
+    body,
+    header,
+    .left-sidebar--sticky-container {
+        background: var(--white)!important;
+    }
+
+    .s-topbar {
+        box-shadow: 0px 0px var(--su8) black!important;
+    }
+
+    .s-btn {
+        --_bu-filled-bs: none!important;
+    }
+
+    /* Turning the yellow of watched tags int a color less violent */
+    .s-post-summary__watched {
+        background: var(--blue-050)!important;
+    }
+
+    .s-post-summary__ignored {
+        --black-500: var(--blue-100)!important;
+        background-color: var(--powder-100-transparent)!important;
+    }
+
+    /* SE uses an `.s-btn__link` under "Custom Filters", but an `.s-btn__filled`
+        under "Ignored Tags". The following is a work-around to make these buttons
+        look alike, styling the button under "Custom Filters" in the same way */
+    .s-sidebarwidget--content .s-btn__link {
+        background-color: var(--_bu-filled-bg) !important;
+        border: 1px solid var(--_bu-filled-bc) !important;
+
+        border-radius: var(--su2)!important;
+        padding: var(--su8)!important;
+        /* the button under "Ignored Tags" has `.mx_auto`, centering it in the box. */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .s-sidebarwidget--content .s-btn__link:active {
+        --theme-button-filled-active-border-color: var(--theme-primary-600);
+    }
+
+    .s-sidebarwidget--content .s-btn__link:selected {
+        --theme-button-filled-selected-color: var(--theme-primary-900);
+        --theme-button-filled-selected-background-color: var(--theme-primary-200);
+        --theme-button-filled-selected-border-color: var(--theme-primary-800);
+    }
+    .s-sidebarwidget--content .s-btn__lin:hover {
+        --theme-button-filled-hover-background-color: var(--theme-primary-100);
+    }
+
+    /* Removing the noisy yellow from Featured Meta */
+    .s-sidebarwidget.s-sidebarwidget__yellow {
+        --_sw-bc: var(--theme-background-color) !important;
+        background-color: var(--theme-background-color) !important;
+    }
+
+    .s-sidebarwidget.s-sidebarwidget__yellow .s-sidebarwidget--header {
+        background-color: var(--black-025)!important;
+    }
+
+    /* Marking Overlaying Elements */
+    body {
+        --popover-box-shadow: var(--su1) var(--su1) var(--su16) var(--theme-primary-color) !important;
+    }
+
+    .s-popover,
+    .message,
+    #onetrust-banner-sdk,
+    .topbar-dialog
+    .s-modal--dialog {
+        box-shadow: var(--popover-box-shadow)!important;
+        border: none!important;
+    }
+}
+
