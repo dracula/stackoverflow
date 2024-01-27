@@ -375,6 +375,59 @@ domain("thesffblog.com") {
     }
 
     /**
+     * Fixes the lack on contrast on tags and other UI elements for all the accent colors
+     */
+    .post-tag,
+    .geo-tag,
+    .container .chosen-choices .search-choice,
+    .container .chosen-container-multi .chosen-choices li.search-choice {
+        background-color: var(--theme-tag-background-color, var(--blue-050));
+    }
+    /**
+     * Fixes the lack on contrast on tags and other UI elements for all the accent colors
+     */
+    if accent-color==white {
+        .post-tag,
+        .geo-tag,
+        .container .chosen-choices .search-choice,
+        .container .chosen-container-multi .chosen-choices li.search-choice {
+            color: var(--theme-tag-color, var(--black-025));
+            background-color: var(--theme-tag-background-color, var(--black-600));
+        }
+    }
+    if accent-color==comment {
+        .post-tag,
+        .geo-tag,
+        .container .chosen-choices .search-choice,
+        .container .chosen-container-multi .chosen-choices li.search-choice {
+            color: var(--theme-tag-color, var(--blue-900));
+            background-color: var(--theme-tag-background-color, var(--blue-100));
+        }
+    }
+
+    /**
+     * Slightly increases the contrast for code blocks
+     */
+    .s-prose *:not(.s-code-block) > code {
+        background-color: var(--black-150);
+    }
+
+    /**
+     * Slightly increases the contrast for code blocks containing hyperlinks
+     * For red, purple, white, (comment) accent colors
+     */
+    if accent-color==red or accent-color==purple or accent-color==white {
+        .s-prose *:not(.s-code-block) > a code {
+            background-color: #444651;
+        }
+    }
+    if accent-color==comment {
+        .s-prose *:not(.s-code-block) > a code {
+            background-color: var(--black-500);
+        }
+    }
+
+    /**
      * Fixes the spam indicator for posts marked as spam
      */
     .bounty-indicator-tab.flagbg {
