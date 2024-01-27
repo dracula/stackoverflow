@@ -117,8 +117,8 @@ domain("thesffblog.com") {
             --blue-900: #dadde7 !important;
         }
         if accent-color==orange {
-            --blue-050: #19120b !important;
-            --blue-100: #4c3720 !important;
+            --blue-050: #583F25 !important;
+            --blue-100: #825D37 !important;
             --blue-200: #805c36 !important;
             --blue-300: #b3814c !important;
             --blue-400: #ffb86c !important;
